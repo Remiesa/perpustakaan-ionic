@@ -1,20 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <br />
+    <ion-title>Library</ion-title>
+    <br />
+    <ion-title>Welcome {{ userName }}!</ion-title>
+    <br />
+    <ion-title><ion-button (click)="logout()">LOGOUT</ion-button></ion-title>
+    <ion-button class="flex-center" (click)="savedBooksNavigate()"
+      >View Saved Books</ion-button
+    >
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content [fullscreen]="true" class="light">
+  <ion-card *ngFor="let book of books" color="primary">
+    <ion-card-header (click)="showBook(book)">
+      <ion-card-title>{{ book.name }}</ion-card-title>
+      <ion-card-subtitle>{{ book.genre_name }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Author: {{ book.author }}</p>
+      <ion-button
+        fill="outline"
+        slot="end"
+        (click)="checking(book)"
+        color="dark"
+        >Add to my personal list</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true" class="theme">
+  <div class="flex-center">
+    <ion-card class="background">
+      <ion-card-header>
+        <ion-card-title
+          style="text-align: center; font-weight: bold"
+          color="primary"
+          >Register</ion-card-title
+        >
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input
+          class="textBlack"
+          label="Name"
+          [(ngModel)]="name"
+          labelPlacement="floating"
+          placeholder="Enter Name"
+        ></ion-input>
+        <ion-input
+          class="textBlack"
+          label="Email"
+          [(ngModel)]="email"
+          labelPlacement="floating"
+          placeholder="Enter Email"
+        ></ion-input>
+        <ion-input
+          class="textBlack"
+          label="Password"
+          [(ngModel)]="password"
+          type="password"
+          labelPlacement="floating"
+          placeholder="Enter Password"
+        ></ion-input>
+        <ion-input
+          class="textBlack"
+          label="Confirm Password"
+          [(ngModel)]="confirmPassword"
+          type="password"
+          labelPlacement="floating"
+          placeholder="Enter Password"
+        ></ion-input>
+        <ion-button size="full" (click)="checking()">Register</ion-button>
+      </ion-card-content>
+      <ion-button (click)="loginPage()" fill="clear" size="full"
+        >Back to Login</ion-button
+      >
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true" class="theme">
+  <div class="flex-center">
+    <ion-card class="background">
+      <ion-card-header>
+        <ion-card-title
+          style="text-align: center; font-weight: bold"
+          color="primary"
+          >Login</ion-card-title
+        >
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input
+          [(ngModel)]="email"
+          name="email"
+          class="textBlack"
+          label="Email"
+          labelPlacement="floating"
+          placeholder="Enter Email"
+        ></ion-input>
+        <ion-input
+          [(ngModel)]="password"
+          name="password"
+          class="textBlack"
+          label="Password"
+          type="password"
+          labelPlacement="floating"
+          placeholder="Enter Password"
+        ></ion-input>
+        <ion-button size="full" (click)="login()">Login</ion-button>
+      </ion-card-content>
+      <ion-button (click)="registerPage()" fill="clear" size="full"
+        >Register</ion-button
+      >
+    </ion-card>
+  </div>
+</ion-content>

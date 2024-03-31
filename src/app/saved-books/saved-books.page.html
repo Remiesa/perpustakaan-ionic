@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <br />
+    <ion-title>Library - Saved Books</ion-title>
+    <ion-button class="flex-center" (click)="homeNavigate()"
+      >Back to Library</ion-button
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="light">
+  <ion-card *ngFor="let savedBook of savedBooks" color="primary">
+    <ion-card-header (click)="showBook(savedBook)">
+      <ion-card-title style="color: white">{{ savedBook.name }}</ion-card-title>
+      <ion-card-subtitle>{{ savedBook.genre_name }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Author : {{ savedBook.author }}</p>
+      <ion-button
+        fill="outline"
+        slot="end"
+        (click)="deleteBook(savedBook)"
+        color="dark"
+        >Delete from my personal list</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+</ion-content>
